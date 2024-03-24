@@ -2,14 +2,15 @@
 #include<locale.h>
 #include<math.h>
 
-main() {
+int main() {
     setlocale(LC_ALL, "portuguese");
     calculator();
+    return 0;
 }
 
 void positivoNegativoNulo() {
     int primaryNumber;
-    printf("Digite um número: ");
+    printf("Digite um n?mero: ");
     scanf("%i", &primaryNumber);
 
     if (primaryNumber > 0) printf("Positivo!");
@@ -22,17 +23,17 @@ void intervalBetweenTwoValues() {
     int finalInterval;
     int primaryNumber;
 
-    printf("Digite dois números: ");
+    printf("Digite dois n?meros: ");
     scanf("%i%i", &initialInterval, &finalInterval);
 
-    printf("Digite um número: ");
+    printf("Digite um n?mero: ");
     scanf("%i", &primaryNumber);
 
     if (primaryNumber > initialInterval && primaryNumber < finalInterval)
-        printf("Número dentro do intervalo");
+        printf("N?mero dentro do intervalo");
     else if (primaryNumber == initialInterval || primaryNumber == finalInterval)
-        printf("Número está em uma das extremidades");
-    else printf("Número fora do intervalo");
+        printf("N?mero est? em uma das extremidades");
+    else printf("N?mero fora do intervalo");
 }
 
 void calculateIMC() {
@@ -46,36 +47,36 @@ void calculateIMC() {
     imc = weigth / pow(heigth, 2);
 
     if (imc < 18.5) printf("Abaixo do peso");
-    else if (imc < 25.0) printf("Saudável");
+    else if (imc < 25.0) printf("Saud?vel");
     else if (imc < 30.0) printf("Sobrepeso");
     else if (imc < 35.0) printf("Obesidade Grau I");
     else if (imc < 40.0) printf("Obesidade Grau II (severa)");
-    else printf("Obesidade Grau III (mórbida)");
+    else printf("Obesidade Grau III (m?rbida)");
 }
 
 void repeatNumber() {
     int firstNumber, secondNumber, thirdNumber;
 
-    printf("Digite três números: ");
+    printf("Digite tr?s n?meros: ");
     scanf("%i%i%i", &firstNumber, &secondNumber, &thirdNumber);
 
     if (firstNumber == secondNumber || firstNumber == thirdNumber)
-        printf("O número %i está repetido", firstNumber);
+        printf("O n?mero %i est? repetido", firstNumber);
     else if (secondNumber == thirdNumber)
-        printf("O número %i está repetido", secondNumber);
+        printf("O n?mero %i est? repetido", secondNumber);
 }
 
 void higherNumber() {
     int firstNumber, secondNumber, thirdNumber;
 
-    printf("Digite três números: ");
+    printf("Digite tr?s n?meros: ");
     scanf("%i%i%i", &firstNumber, &secondNumber, &thirdNumber);
 
     if (firstNumber > secondNumber && firstNumber > thirdNumber)
-        printf("%i é o maior número", firstNumber);
+        printf("%i ? o maior n?mero", firstNumber);
     else if (secondNumber > thirdNumber)
-        printf("%i é o maior número", secondNumber);
-    else printf("%i é o maior número", thirdNumber);
+        printf("%i ? o maior n?mero", secondNumber);
+    else printf("%i ? o maior n?mero", thirdNumber);
 }
 
 void calculator() {
@@ -102,4 +103,6 @@ void calculator() {
     else if (secondNumber == 0)
         printf("Não é possível dividir por zero");
     else printf("%f / %f = %f", firstNumber, secondNumber, firstNumber / secondNumber);
+
+    return;
 }
